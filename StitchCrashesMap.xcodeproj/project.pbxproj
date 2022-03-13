@@ -7,23 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9C3B9227DD8C2D00609679 /* MKPolyline+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */; };
+		5D9C3B9427DD8C4C00609679 /* GridOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */; };
+		5D9C3B9627DD8C7700609679 /* DelayedGridOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */; };
+		5D9C3B9827DD8E1B00609679 /* HackTileOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9727DD8E1B00609679 /* HackTileOverlayRenderer.swift */; };
 		5D9F9E1827DCDCE700470786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9E1727DCDCE700470786 /* AppDelegate.swift */; };
-		5D9F9E1A27DCDCE700470786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9E1927DCDCE700470786 /* SceneDelegate.swift */; };
-		5D9F9E1C27DCDCE700470786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9E1B27DCDCE700470786 /* ViewController.swift */; };
 		5D9F9E1F27DCDCE700470786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F9E1D27DCDCE700470786 /* Main.storyboard */; };
 		5D9F9E2127DCDCE700470786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F9E2027DCDCE700470786 /* Assets.xcassets */; };
 		5D9F9E2427DCDCE700470786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9F9E2227DCDCE700470786 /* LaunchScreen.storyboard */; };
+		5D9F9E2C27DCDD4B00470786 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F9E2B27DCDD4B00470786 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPolyline+Initializers.swift"; sourceTree = "<group>"; };
+		5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOverlay.swift; sourceTree = "<group>"; };
+		5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedGridOverlayRenderer.swift; sourceTree = "<group>"; };
+		5D9C3B9727DD8E1B00609679 /* HackTileOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTileOverlayRenderer.swift; sourceTree = "<group>"; };
+		5D9C3B9927DD902800609679 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D9F9E1427DCDCE700470786 /* StitchCrashesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCrashesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9F9E1727DCDCE700470786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D9F9E1927DCDCE700470786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D9F9E1B27DCDCE700470786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D9F9E1E27DCDCE700470786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D9F9E2027DCDCE700470786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D9F9E2327DCDCE700470786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D9F9E2527DCDCE700470786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9F9E2B27DCDD4B00470786 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				5D9F9E1727DCDCE700470786 /* AppDelegate.swift */,
-				5D9F9E1927DCDCE700470786 /* SceneDelegate.swift */,
-				5D9F9E1B27DCDCE700470786 /* ViewController.swift */,
+				5D9F9E2B27DCDD4B00470786 /* MapViewController.swift */,
+				5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */,
+				5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */,
+				5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */,
+				5D9C3B9727DD8E1B00609679 /* HackTileOverlayRenderer.swift */,
+				5D9C3B9927DD902800609679 /* README.md */,
 				5D9F9E1D27DCDCE700470786 /* Main.storyboard */,
 				5D9F9E2027DCDCE700470786 /* Assets.xcassets */,
 				5D9F9E2227DCDCE700470786 /* LaunchScreen.storyboard */,
@@ -138,9 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D9F9E1C27DCDCE700470786 /* ViewController.swift in Sources */,
+				5D9C3B9627DD8C7700609679 /* DelayedGridOverlayRenderer.swift in Sources */,
+				5D9C3B9427DD8C4C00609679 /* GridOverlay.swift in Sources */,
+				5D9C3B9227DD8C2D00609679 /* MKPolyline+Initializers.swift in Sources */,
+				5D9C3B9827DD8E1B00609679 /* HackTileOverlayRenderer.swift in Sources */,
 				5D9F9E1827DCDCE700470786 /* AppDelegate.swift in Sources */,
-				5D9F9E1A27DCDCE700470786 /* SceneDelegate.swift in Sources */,
+				5D9F9E2C27DCDD4B00470786 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,9 +306,9 @@
 				INFOPLIST_FILE = StitchCrashesMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +334,9 @@
 				INFOPLIST_FILE = StitchCrashesMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
