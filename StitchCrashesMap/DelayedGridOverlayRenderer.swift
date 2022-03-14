@@ -8,16 +8,6 @@ final class DelayedGridOverlayRenderer: MKOverlayRenderer {
 
     private let lock = NSLock()
     private var canDrawCache: [String: Bool] = [:]
-
-    private static let colors = [
-        UIColor.systemCyan,
-        UIColor.systemRed,
-        UIColor.systemOrange,
-        UIColor.systemPink,
-        UIColor.systemBlue,
-        UIColor.systemPurple,
-        UIColor.systemMint
-    ]
 }
 
 extension DelayedGridOverlayRenderer {
@@ -31,8 +21,8 @@ extension DelayedGridOverlayRenderer {
         // - The `cache` value is set to `true` at some random time in the future (1 and 5 seconds)
         //   - This simulates asynchronously loading geometry data from an offline sqlite database, for example.
 
-        let key = "\(mapRect.minX).\(mapRect.minY).\(mapRect.maxX).\(mapRect.maxY).\(zoomScale)"
-        let canDraw = doSafe { canDrawCache[key] ?? false }
+        let key = makeKey(from: mapRect, zoomScale: zoomScale)
+        let canDraw = doSafe { canDrawCache[key] != nil }
 
         if canDraw {
             return true
@@ -54,10 +44,15 @@ extension DelayedGridOverlayRenderer {
     }
 
     override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-        let randomColorIndex = Int.random(in: 0..<DelayedGridOverlayRenderer.colors.count)
-        let randomColor = DelayedGridOverlayRenderer.colors[randomColorIndex]
-        context.setFillColor(randomColor.withAlphaComponent(0.4).cgColor)
-        context.fill(rect(for: mapRect))
+        context.setStrokeColor(UIColor.systemBlue.cgColor)
+        context.stroke(rect(for: mapRect), width: MKRoadWidthAtZoomScale(zoomScale))
+    }
+}
+
+extension DelayedGridOverlayRenderer {
+
+    private func makeKey(from mapRect: MKMapRect, zoomScale: MKZoomScale) -> String {
+        return "\(mapRect.minX).\(mapRect.minY).\(mapRect.maxX).\(mapRect.maxY).\(zoomScale)"
     }
 }
 

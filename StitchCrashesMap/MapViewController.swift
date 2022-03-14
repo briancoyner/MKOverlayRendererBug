@@ -12,6 +12,7 @@ final class MapViewController: UIViewController, MKMapViewDelegate {
 
     private lazy var annotations = lazyMagicKingdomAnnotations()
     private lazy var mapView = lazyMapView()
+    private lazy var gridOverlay = lazyGridOverlay()
 }
 
 extension MapViewController {
@@ -33,15 +34,16 @@ extension MapViewController {
         mapView.addAnnotations(annotations)
         mapView.showAnnotations(annotations, animated: false)
 
+        // This demo uses the open streets to replace the standard base map tiles. Any `MKTileOverlay`
+        // will expose the re-draw/ flickering bug.
+        //
+        // https://www.openstreetmap.org/copyright
         let tileOverlay = MKTileOverlay(urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png")
         tileOverlay.canReplaceMapContent = true
         mapView.addOverlay(tileOverlay)
 
-        mapView.addOverlay(GridOverlay())
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [self] in
-            mapView.addOverlay(MKPolyline(coordinates: annotations.map { $0.coordinate }))
-        }
+        // See `DelayedGridOverlayRenderer`.
+        mapView.addOverlay(gridOverlay)
     }
 }
 
@@ -52,14 +54,9 @@ extension MapViewController {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         switch overlay {
         case let tileOverlay as MKTileOverlay:
-//            return HackTileOverlayRenderer(tileOverlay: tileOverlay)
+            // Note: Replace the `MKTileOverlayRenderer` with the `HackTileOverlayRenderer` to stop re-drawing madness.
             return MKTileOverlayRenderer(tileOverlay: tileOverlay)
-        case let polyline as MKPolyline:
-            let renderer = MKPolylineRenderer(polyline: polyline)
-            renderer.lineWidth = 2
-            renderer.strokeColor = UIColor.systemBlue
-
-            return renderer
+            // return HackTileOverlayRenderer(tileOverlay: tileOverlay)
         case is GridOverlay:
             return DelayedGridOverlayRenderer()
         default:
@@ -80,21 +77,17 @@ extension MapViewController {
 extension MapViewController {
 
     @objc
-    private func selectAnnotation() {
-        // In our test set, the first annotation is "It's A Small World".
-        // So any testing you do with the "Select" toolbar button is always
-        // focused on this one annotation.
-        let annotation = annotations[0]
-        mapView.selectAnnotation(annotation, animated: true)
-    }
-
-    @objc
-    private func deselectAnnotation() {
-        guard let annotation = mapView.selectedAnnotations.first else {
+    private func addGridOverlay() {
+        guard !(mapView.overlays.contains { $0 === gridOverlay }) else {
             return
         }
 
-        mapView.deselectAnnotation(annotation, animated: true)
+        mapView.addOverlay(gridOverlay)
+    }
+
+    @objc
+    private func removeGridOverlay() {
+        mapView.removeOverlay(gridOverlay)
     }
 }
 
@@ -102,9 +95,9 @@ extension MapViewController {
 
     private func showToolbarWithDemoButtons() {
         setToolbarItems([
-            UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selectAnnotation)),
+            UIBarButtonItem(title: "Add Grid", style: .plain, target: self, action: #selector(addGridOverlay)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: "Deselect", style: .plain, target: self, action: #selector(deselectAnnotation))
+            UIBarButtonItem(title: "Remove Grid", style: .plain, target: self, action: #selector(removeGridOverlay))
         ], animated: false)
 
         navigationController?.setToolbarHidden(false, animated: false)
@@ -112,6 +105,10 @@ extension MapViewController {
 }
 
 extension MapViewController {
+
+    private func lazyGridOverlay() -> GridOverlay {
+        return GridOverlay()
+    }
 
     private func lazyMapView() -> MKMapView {
         let view = MKMapView()
