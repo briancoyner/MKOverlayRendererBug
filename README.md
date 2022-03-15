@@ -1,5 +1,13 @@
 ##  `MKOverlayRenderer.setNeedsDisplay` Causes `MKTileOverlayRenderer` To Re-Render Tiles
 
+### Bug Report ID
+
+FB9957545
+
+Note: this is still broken as of iOS 15 (Xcode 13.3).
+
+### Notes 
+
 This demo app exposes a MapKit bug that re-renders `MKTileOverlayRenderer` tiles when:
 - another `MKOverlayRenderer` calls any of the `setNeedsDisplay` methods.
 - an overlay is added to the map (e.g. simple `MKPolyline` + `MKPolylineRenderer`).
@@ -11,6 +19,8 @@ Here are the main players in this demo:
 - A `GridOverlay` renders using a `DelayedGridOverlayRenderer`.
 - A `DelayedGridOverlayRenderer` is a simple `MKOverlayRenderer` that calls the `setNeedsDisplay` function "later".
   - Simulates asynchronously generating/ loading tiles (but for simplicity just renders a box around the tile).
+
+Feedback ID: FB9957545
 
 ### Demo showing the "flickering" bug
 

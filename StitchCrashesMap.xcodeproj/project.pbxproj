@@ -23,7 +23,6 @@
 		5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOverlay.swift; sourceTree = "<group>"; };
 		5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedGridOverlayRenderer.swift; sourceTree = "<group>"; };
 		5D9C3B9727DD8E1B00609679 /* HackTileOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTileOverlayRenderer.swift; sourceTree = "<group>"; };
-		5D9C3B9927DD902800609679 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D9F9E1427DCDCE700470786 /* StitchCrashesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCrashesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9F9E1727DCDCE700470786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D9F9E1E27DCDCE700470786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,8 +30,6 @@
 		5D9F9E2327DCDCE700470786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D9F9E2527DCDCE700470786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D9F9E2B27DCDD4B00470786 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		5DBE07B527DFE0E2000FC303 /* hackrenderer-no-flickering.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "hackrenderer-no-flickering.gif"; sourceTree = "<group>"; };
-		5DBE07B627DFE0E3000FC303 /* standardrenderer-flickering.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "standardrenderer-flickering.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +68,6 @@
 				5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */,
 				5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */,
 				5D9C3B9727DD8E1B00609679 /* HackTileOverlayRenderer.swift */,
-				5D9C3B9927DD902800609679 /* README.md */,
-				5DBE07B527DFE0E2000FC303 /* hackrenderer-no-flickering.gif */,
-				5DBE07B627DFE0E3000FC303 /* standardrenderer-flickering.gif */,
 				5D9F9E1D27DCDCE700470786 /* Main.storyboard */,
 				5D9F9E2027DCDCE700470786 /* Assets.xcassets */,
 				5D9F9E2227DCDCE700470786 /* LaunchScreen.storyboard */,
