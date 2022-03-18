@@ -8,6 +8,20 @@ final class DelayedGridOverlayRenderer: MKOverlayRenderer {
 
     private let lock = NSLock()
     private var canDrawCache: [String: Bool] = [:]
+
+    private var color: UIColor {
+        return (overlay as! GridOverlay).color
+    }
+
+    private var foo: Any? = nil
+
+    override init(overlay: MKOverlay) {
+        super.init(overlay: overlay)
+
+        foo = (overlay as! GridOverlay).observe(\.color, changeHandler: { [self] _, _ in
+            setNeedsDisplay()
+        })
+    }
 }
 
 extension DelayedGridOverlayRenderer {
@@ -44,7 +58,7 @@ extension DelayedGridOverlayRenderer {
     }
 
     override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-        context.setStrokeColor(UIColor.systemBlue.cgColor)
+        context.setStrokeColor(color.cgColor)
         context.stroke(rect(for: mapRect), width: MKRoadWidthAtZoomScale(zoomScale))
     }
 }

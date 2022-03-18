@@ -30,7 +30,7 @@ extension AppDelegate {
         toolbar.standardAppearance = toolbarAppearance
         toolbar.scrollEdgeAppearance = toolbarAppearance
 
-        let mainViewController = MapViewController()
+        let mainViewController = CompositeMapViewController()
         window?.rootViewController = UINavigationController(rootViewController: mainViewController)
         window?.makeKeyAndVisible()
         return true

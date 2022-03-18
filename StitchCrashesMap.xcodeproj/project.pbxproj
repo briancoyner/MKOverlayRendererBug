@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D874DD627E4CF590066599D /* CompositeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D874DD527E4CF590066599D /* CompositeMapViewController.swift */; };
 		5D9C3B9227DD8C2D00609679 /* MKPolyline+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */; };
 		5D9C3B9427DD8C4C00609679 /* GridOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */; };
 		5D9C3B9627DD8C7700609679 /* DelayedGridOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D874DD527E4CF590066599D /* CompositeMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeMapViewController.swift; sourceTree = "<group>"; };
 		5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPolyline+Initializers.swift"; sourceTree = "<group>"; };
 		5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOverlay.swift; sourceTree = "<group>"; };
 		5D9C3B9527DD8C7700609679 /* DelayedGridOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedGridOverlayRenderer.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				5D9F9E1727DCDCE700470786 /* AppDelegate.swift */,
+				5D874DD527E4CF590066599D /* CompositeMapViewController.swift */,
 				5D9F9E2B27DCDD4B00470786 /* MapViewController.swift */,
 				5D9C3B9127DD8C2D00609679 /* MKPolyline+Initializers.swift */,
 				5D9C3B9327DD8C4C00609679 /* GridOverlay.swift */,
@@ -152,6 +155,7 @@
 				5D9C3B9227DD8C2D00609679 /* MKPolyline+Initializers.swift in Sources */,
 				5D9C3B9827DD8E1B00609679 /* HackTileOverlayRenderer.swift in Sources */,
 				5D9F9E1827DCDCE700470786 /* AppDelegate.swift in Sources */,
+				5D874DD627E4CF590066599D /* CompositeMapViewController.swift in Sources */,
 				5D9F9E2C27DCDD4B00470786 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

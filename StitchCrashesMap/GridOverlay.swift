@@ -6,6 +6,9 @@ import MapKit
 
 final class GridOverlay: NSObject, MKOverlay {
 
+    @objc dynamic
+    var color: UIColor = .systemBlue
+
     var boundingMapRect: MKMapRect {
         return .world
     }
